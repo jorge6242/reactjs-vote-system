@@ -1,0 +1,71 @@
+@import '../../Styles/colors';
+@import '../../Styles/imagesAndIcons';
+    
+.main-container
+    .main-container__comment-box
+        background: #ebebeb
+        display: flex
+        justify-content: center
+        justify-items: center
+        p
+            padding: 0
+            margin: 0
+        .main-container__colum-1
+            width: 20%
+            padding: 20px
+            color: $grey-default
+            .main-container__text1
+                font-size: 20px
+            .main-container__text2
+                font-size: 30px
+                font-weight: bold
+        .main-container__colum-2
+            width: 75%
+            padding: 20px
+            color: $grey-default
+        .main-container__colum-3
+            width: 5%
+            padding: 20px
+            background: $remove-icon no-repeat center center
+            background-size: 10%
+    .main-container__vote-container-title
+        margin-top: 10px
+        font-size: 40px
+        color: $grey-default
+    .main-container__vote-list
+        display: flex
+        justify-content: space-between
+        width: 100%
+        flex-wrap: wrap
+    .main-container__add-cantidate
+        position: relative
+        display: flex
+        justify-content: space-around
+        background: $people-image no-repeat center center
+        z-index: 2
+        .main-container__add-cantidate-layer
+            position: absolute
+            height: fit-content
+            z-index: 1
+            width: 100%
+            height: 100%
+            background: white
+            opacity: 0.6
+        .main-container__add-cantidate-text
+            z-index: 2
+            font-size: 30px
+            p
+                line-height: 2
+                margin: 0
+        .main-container__add-cantidate-button
+            z-index: 2
+            display: flex
+            justify-content: center
+            padding: 10px
+            button
+                border: 3px solid $grey-default
+                color: $grey-default
+                padding: 10px 40px 10px 40px
+                background: transparent
+                font-weight: bold
+                font-size: 19px

@@ -1,0 +1,96 @@
+@import '../../Styles/colors';
+@import '../../Styles/imagesAndIcons';
+    
+.candidate-container
+    position: relative
+    width: 500px
+    height: 600px
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    margin: 10px 0px 10px 0px
+    z-index: 2
+    .cantidate-container__box
+        position: absolute
+        bottom: 0
+        width: 100%
+        z-index: 2
+        .cantidate-container__body
+            display: flex
+            justify-content: left
+            color: white
+            .cantidate-container__like
+                height: 20px
+            .cantidate-container__detail
+                margin-left: 30px
+                .cantidate-container__title
+                    font-size: 42px
+                    margin: 0
+                    line-height: 0.7
+                .cantidate-container__sub-title
+                    font-size: 11px
+                .cantidate-container__buttons
+                    display: flex
+                    justify-content: left
+                    margin-bottom: 20px
+                    .cantidate-container__button-select
+                        width: 5%
+                        margin-right: 30px
+                        cursor: pointer
+                        .cantidate-container__button-select--active
+                            border: 2px solid $white-default
+                    .cantidate-container__vote-button
+                        border: 1px solid white
+                        padding: 10px
+                        cursor: pointer
+        .cantidate-container__vote-box
+            display: flex
+            justify-content: space-between
+            color: white
+            font-size: 30px
+            div
+                padding: 3px 10px 3px 10px
+                width: 100%
+            .cantidate-container__yes
+                background: rgba(28,187,180,0.7019607843137254)
+                text-align: left
+                display: flex
+                justify-content: center
+                width: 36%
+                min-width: 15%
+                .cantidate-container__icon-yes
+                    background: $like-icon no-repeat center
+                    background-size: 100%
+                    width: 0
+            .cantidate-container__no
+                background: $color-no
+                text-align: right
+                display: flex
+                justify-content: center
+                width: 64%
+                min-width: 15%
+                .cantidate-container__icon-no
+                    background: $like-icon no-repeat center
+                    background-size: 100%
+                    width: 0
+                    transform: rotate(180deg)
+    .candidate-container__layer
+        position: absolute
+        height: fit-content
+        z-index: 1
+        width: 100%
+        height: 100%
+        background: linear-gradient(0deg, rgba(0,0,0,0.611764705882353) 0%, rgba(0,0,0,0) 100%);
+        z-index: 1
+
+
+
+
+
+
+
+
+
+
+
+

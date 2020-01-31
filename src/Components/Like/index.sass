@@ -1,0 +1,21 @@
+.like-container
+    padding: 7px
+    display: flex
+    justify-content: center
+    width: 100%
+    .like-container__like-icon
+        background: url("../../Styles/Images/like-icon.png") no-repeat center
+        background-size: 100%
+        width: 0
+        margin: 0 auto
+        padding: 9px
+    .like-container__like-icon::active
+        border: 2px solid white
+.like-container--yes
+    background: rgba(28,187,180,0.7019607843137254)
+.like-container--no
+    background: rgba(255, 173, 29, 0.901961)
+    .like-container__like-icon
+        transform: rotate(180deg)
+.like-container--active
+    border: 2px solid white

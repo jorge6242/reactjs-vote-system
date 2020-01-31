@@ -1,0 +1,61 @@
+@import '../../Styles/imagesAndIcons';
+  
+.snackbar
+  visibility: hidden
+  min-width: 300px
+  margin-left: -125px 
+  background-color: #333
+  color: #fff
+  text-align: center
+  border-radius: 2px 
+  padding: 16px
+  position: fixed
+  z-index: 1400
+  left: 50%
+  bottom: 30px
+  .snackbar__body
+    display: flex
+    justify-content: space-around
+    .snackbar__close-icon
+      cursor: pointer
+      color: white
+      font-weight: bold
+
+.snackbar--show
+  visibility: visible
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s
+  animation: fadein 0.5s, fadeout 0.5s 2.5s
+
+.snackbar--success
+    background-color: #27ae60
+.snackbar--error
+    background-color: #c0392b
+
+
+
+@-webkit-keyframes fadein
+  frombottom: 0 
+  opacity: 0
+  tobottom: 30px 
+  opacity: 1
+
+
+@keyframes fadein
+  frombottom: 0 
+  opacity: 0
+  tobottom: 30px 
+  opacity: 1
+
+
+@-webkit-keyframes fadeout
+  frombottom: 30px 
+  opacity: 1
+  tobottom: 0 
+  opacity: 0
+
+
+@keyframes fadeout
+  frombottom: 30px 
+  opacity: 1
+  tobottom: 0 
+  opacity: 0

@@ -1,0 +1,59 @@
+@import '../../Styles/colors';
+@import '../../Styles/imagesAndIcons';
+    
+.pope-francis-container
+    width: 35%
+    margin-left: 100px
+    .pope-francis-container__box
+        color: $white-default
+        -webkit-backdrop-filter: blur(10px)
+        backdrop-filter: blur(30px)
+        background-color: rgba(0, 0, 0, 0.2)
+        padding: 20px
+        .pope-francis-container__block
+            p
+                margin: 0 auto
+                font-size: 20px
+            .pope-francis-container__text-pope
+                font-size: 50px
+            .pope-francis-container__text-comment
+                margin-top: 30px
+        .pope-francis-container__more-information
+            margin-top: 20px
+            display: flex
+            justify-content: left
+            .pope-francis-container__logo
+                div
+                    background: $wikipedia-icon no-repeat center
+                    background-size: contain
+                    padding: 10px
+            .pope-francis-container__info
+                margin-left: 10px
+                text-decoration-line: underline
+        .pope-francis-container__text-verdict
+            margin-top: 20px
+            font-weight: bold
+            font-size: 20px
+    .pope-francis-container__vote-box
+        display: flex
+        justify-content: space-between
+        div
+            padding: 20px
+            width: 100%
+        .pope-francis-container__yes
+            background: $color-yes
+            text-align: center
+            div
+                background: $like-icon no-repeat center
+                background-size: 100%
+                width: 0
+                margin: 0 auto
+        .pope-francis-container__no
+            background: $color-no
+            text-align: center
+            div
+                background: $like-icon no-repeat center
+                background-size: 100%
+                width: 0
+                margin: 0 auto
+                transform: rotate(180deg)
