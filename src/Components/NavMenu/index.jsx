@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { logout } from "../../Actions/loginActions";
@@ -8,15 +9,21 @@ import Login from "../Login";
 
 export default function NavMenu() {
   const [menu, setMenu] = useState(false);
+  const history = useHistory();
   const dispatch = useDispatch();
   const statusLogin = useSelector(state => state.loginReducer.status);
-  
-  const handleMenu = () => {
+
+  const handleToolbar = () => {
     if (menu) {
       setMenu(false);
     } else {
       setMenu(true);
     }
+  };
+
+  const handeMenu = path => {
+    history.push(path);
+    setMenu(false);
   };
 
   const handleLogin = type => {
@@ -36,8 +43,10 @@ export default function NavMenu() {
     <div class="mobile-container">
       <div class="mobile-container__topnav">
         <div class="mobile-container__topnav-header">
-          <div class="mobile-container__logo">Rule of Thumb</div>
-          <div class="mobile-container__icon" onClick={() => handleMenu()}>
+          <div class="mobile-container__logo" onClick={() => handeMenu("/")}>
+            Rule of Thumb
+          </div>
+          <div class="mobile-container__icon" onClick={() => handleToolbar()}>
             <div />
           </div>
         </div>
@@ -46,9 +55,22 @@ export default function NavMenu() {
             menu ? "active" : ""
           } `}
         >
-          <div className="mobile-container__menu-item">Past Trials</div>
-          <div className="mobile-container__menu-item">How It Works</div>
-          <div className="mobile-container__menu-item" onClick={() => handleLogin(statusLogin ? "logout" : "login")}>
+          <div
+            className="mobile-container__menu-item"
+            onClick={() => handeMenu("/past-trials")}
+          >
+            Past Trials
+          </div>
+          <div
+            className="mobile-container__menu-item"
+            onClick={() => handeMenu("/how-it-works")}
+          >
+            How It Works
+          </div>
+          <div
+            className="mobile-container__menu-item"
+            onClick={() => handleLogin(statusLogin ? "logout" : "login")}
+          >
             {statusLogin ? "logout" : "Log In / Sign Up"}
           </div>
         </div>

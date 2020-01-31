@@ -1,0 +1,55 @@
+@import '../../Styles/colors';
+@import '../../Styles/responsiveRules';
+
+.profile-container
+    .profile-container__title
+        text-align: center
+        color: $grey-default
+        font-weight: bold
+    form
+        margin-top: 50px
+        .profile-container__field
+            text-align: center
+            color: $grey-default
+            display: flex
+            justify-content: space-between
+            .profile-container__field-title
+                padding: 19px
+                font-weight: bold
+            .profile-container__field-input
+                margin: 10px
+                input
+                    border: 2px solid $grey-default
+                    padding: 10px
+                    color: $grey-default
+                select
+                    border: 2px solid $grey-default
+                    padding: 10px 60px 10px 60px
+                    color: #333333
+                    background: transparent
+                input:focus
+                    outline: none
+        .profile-container__button
+            margin-top: 30px
+            text-align: right
+            button
+                border: 2px solid $grey-default
+                color: $grey-default
+                padding: 10px
+                background: transparent
+                font-weight: bold
+                cursor: pointer
+            button:focus
+                outline: none
+
+@include phone('default','default',portrait)
+
+    .profile-container
+        form
+            .profile-container__field
+                .profile-container__field-title
+                    font-size: 12px
+                .profile-container__field-input
+                    width: 100%
+                    input
+                        width: 100%
