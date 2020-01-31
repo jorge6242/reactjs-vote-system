@@ -1,5 +1,6 @@
 @import '../../Styles/colors';
 @import '../../Styles/imagesAndIcons';
+@import '../../Styles/responsiveRules';
 
 .dashboard-container
     background-color: black
@@ -51,6 +52,7 @@
                 background: rgba(14, 14, 14, 0.301961)
                 text-align: right
                 padding: 20px
+                color: $white-default
                 .dashboard-container__arrow
                     width: 0px
                     height: 0px
@@ -68,4 +70,21 @@
     .dashboard-container__content
         background: white
         padding: 20px 80px 0 80px
+
+@include phone('defaul', 'default', portrait)
+
+    .dashboard-container
+        padding: 0
+        background: transparent
+        .dashboard-container__main-header
+            header
+                display: none
+        .dashboard-container__content
+            padding: 20px 20px 0 20px
+
+@include tablet('defaul', 'default', portrait)
+
+    .dashboard-container
+        .dashboard-container__content
+            padding: 30px 40px 0 40px
 

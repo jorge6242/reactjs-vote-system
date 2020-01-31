@@ -1,29 +1,35 @@
-import React from 'react';
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { updateModal } from "../../Actions/modalActions";
 import { logout, checkUser } from "../../Actions/loginActions";
-import PopeFrancis from '../../Components/PopeFrancis';
-import Footer from '../../Components/Footer';
-import './index.sass';
-import Login from '../../Components/Login';
+import PopeFrancis from "../../Components/PopeFrancis";
+import Footer from "../../Components/Footer";
+import "./index.sass";
+import Login from "../../Components/Login";
+import NavMenu from "../../Components/NavMenu";
 
 export default function Dashboard({ children }) {
   const dispatch = useDispatch();
-  const statusLogin = useSelector(state => state.loginReducer.status)
+  const statusLogin = useSelector(state => state.loginReducer.status);
 
-  dispatch(checkUser())
+  dispatch(checkUser());
 
   const handleLogin = type => {
-    if (type === 'login') {
-      dispatch(updateModal({ payload : { status : true , element : <Login />, customSize: 'rule-a' } }))
+    if (type === "login") {
+      dispatch(
+        updateModal({
+          payload: { status: true, element: <Login />, customSize: "rule-a" }
+        })
+      );
     } else {
-      dispatch(logout())
+      dispatch(logout());
     }
-  }
+  };
 
   return (
     <div className="dashboard-container">
+      <NavMenu />
       <div className="dashboard-container__main-header">
         <div className="dashboard-container__layer"></div>
         <header>
@@ -31,12 +37,15 @@ export default function Dashboard({ children }) {
           <div className="dashboard-container__menu">
             <div className="dashboard-container__item">Past Trials</div>
             <div className="dashboard-container__item">How It Works</div>
-            <div className="dashboard-container__item" onClick={() => handleLogin(statusLogin ? 'logout' : 'login')}>
-              {statusLogin ? 'logout' : 'Log In / Sign Up'}
-              </div>
+            <div
+              className="dashboard-container__item"
+              onClick={() => handleLogin(statusLogin ? "logout" : "login")}
+            >
+              {statusLogin ? "logout" : "Log In / Sign Up"}
+            </div>
             <div className="dashboard-container__item">
               <div className="dashboard-container__item-search" />
-              </div>
+            </div>
           </div>
         </header>
         <section className="dashboard-container__pope-comments">
@@ -52,8 +61,8 @@ export default function Dashboard({ children }) {
       </div>
       <div className="dashboard-container__content">
         {children}
-      <Footer />
+        <Footer />
       </div>
     </div>
-  )
+  );
 }
