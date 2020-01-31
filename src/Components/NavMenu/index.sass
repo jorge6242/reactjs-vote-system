@@ -1,18 +1,26 @@
+@import '../../Styles/colors';
 @import '../../Styles/imagesAndIcons';
 @import '../../Styles/responsiveRules';
     
 .mobile-container
-    background-color: #555
-    color: white
     display: none
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1000
+    width: 100%
+    color: $white-default
+    -webkit-backdrop-filter: blur(10px)
+    backdrop-filter: blur(30px)
+    background-color: rgba(0, 0, 0, 0.2)
     .mobile-container__topnav
         overflow: hidden
-        background-color: #333
         position: relative
         .mobile-container__topnav-header
             display: flex
             justify-content: space-between
             padding: 10px
+            border: 1px solid $white-default
             .mobile-container__logo
                 font-size: 17px
                 cursor: pointer
@@ -27,7 +35,8 @@
         .mobile-container__menu
             display: none
             .mobile-container__menu-item
-                border: 1px solid white
+                border: 0
+                border-bottom: 1px solid $white-default
                 padding: 10px
                 cursor: pointer
         .mobile-container__menu--active
