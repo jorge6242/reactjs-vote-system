@@ -1,5 +1,6 @@
 @import '../../Styles/colors';
 @import '../../Styles/imagesAndIcons';
+@import '../../Styles/responsiveRules';
     
 .main-container
     .main-container__comment-box
@@ -69,3 +70,47 @@
                 background: transparent
                 font-weight: bold
                 font-size: 19px
+
+@include tablet('deefault','default',portrait)
+
+    .main-container 
+        .main-container__comment-box 
+            .main-container__colum-1 
+                .main-container__text1
+                    font-size: 15px
+                .main-container__text2
+                    font-size: 20px
+            .main-container__colum-2
+                font-size: 14px
+                padding: 18px
+        .main-container__add-cantidate 
+            .main-container__add-cantidate-text
+                font-size: 21px
+                p
+                    line-height: 3
+
+@include phone('deefault','default',portrait)
+
+    .main-container 
+        .main-container__comment-box 
+            .main-container__colum-1 
+                .main-container__text1
+                    font-size: 10px
+                .main-container__text2
+                    font-size: 15px
+            .main-container__colum-2
+                font-size: 12px
+        .main-container__add-cantidate 
+            .main-container__add-cantidate-text
+                font-size: 15px
+                padding: 10px
+                p
+                    line-height: 1.5
+                    margi
+            .main-container__add-cantidate-button
+                button
+                    font-size: 10px
+                    padding: 5px
+        .main-container__vote-list
+            justify-content: center
+

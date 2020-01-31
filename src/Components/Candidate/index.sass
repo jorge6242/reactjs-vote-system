@@ -1,5 +1,6 @@
 @import '../../Styles/colors';
 @import '../../Styles/imagesAndIcons';
+@import '../../Styles/responsiveRules';
     
 .candidate-container
     position: relative
@@ -82,6 +83,44 @@
         height: 100%
         background: linear-gradient(0deg, rgba(0,0,0,0.611764705882353) 0%, rgba(0,0,0,0) 100%);
         z-index: 1
+
+@include tablet('default', 'default', portrait)
+
+    .candidate-container
+        width: 330px
+        height: 400px
+        .cantidate-container__box 
+            .cantidate-container__body
+                .cantidate-container__like
+                    width: 16px
+                    height: 0
+                    padding-top: 5px
+                .cantidate-container__detail
+                    .cantidate-container__title
+                        font-size: 30px
+                        line-height: 1
+                    .cantidate-container__sub-title
+                        font-size: 9px
+                    .cantidate-container__description
+                        font-size: 12px
+                .cantidate-container__buttons
+                    .cantidate-container__vote-button
+                        font-size: 9px
+        .cantidate-container__vote-box
+            .cantidate-container__yes
+                .cantidate-container__icon-yes
+                    padding: 3px 8px 3px 8px
+                .cantidate-container__percent
+                    font-size: 18px
+                    padding: 3px 6px 0px 6px
+                    line-height: 2
+            .cantidate-container__no
+                .cantidate-container__icon-no
+                    padding: 3px 8px 3px 8px
+                .cantidate-container__percent
+                    font-size: 18px
+                    padding: 3px 6px 0px 6px
+                    line-height: 2
 
 
 

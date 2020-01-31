@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import "./index.sass";
 import Like from "../Like";
@@ -21,6 +21,7 @@ export default function Candidate({
   const [candidate, setCandidate] = useState(null);
   const [votingDone, setVotingDone] = useState(false);
   const dispatch = useDispatch();
+  const statusLogin = useSelector(state => state.loginReducer.status);
 
   let widthYes = percentageYes;
   let widthNo = percentageNo;
@@ -35,17 +36,17 @@ export default function Candidate({
   };
 
   const handleVote = () => {
-    if (votingDone) {
-      setVotingDone(false);
-      setVote(null);
-    } else {
+    if (!votingDone && vote !== null) {
       dispatch(
         createCandidateVote({
           candidate,
           vote
         })
       );
-      setVotingDone(true);
+      if(statusLogin) setVotingDone(true);
+    } else {
+      setVotingDone(false);
+      setVote(null);
     }
   };
 
