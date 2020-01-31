@@ -1,4 +1,5 @@
 @import '../../Styles/colors';
+@import '../../Styles/responsiveRules';
 
 .login-container
     .login-container__title
@@ -35,3 +36,15 @@
                 cursor: pointer
             button:focus
                 outline: none
+
+@include phone('default','default',portrait)
+
+    .login-container
+        form
+            .login-container__field
+                .login-container__field-title
+                    font-size: 12px
+                .login-container__field-input
+                    width: 100%
+                    input
+                        width: 100%
