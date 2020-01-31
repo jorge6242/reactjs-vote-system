@@ -4,7 +4,7 @@
 
 ### Hooks
 ### Redux
-### Hook Forms
+### Hook validation Forms
 ### Bem Metogology CSS
 
 In the project directory, you can run:
